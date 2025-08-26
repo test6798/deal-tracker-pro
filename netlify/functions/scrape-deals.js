@@ -1,7 +1,6 @@
 // netlify/functions/scrape-deals.js
 // Serverless function to handle web scraping with secure API keys
-
-const fetch = require('node-fetch');
+// Uses built-in fetch API (Node.js 18+ / Netlify Runtime)
 
 // Deal source configurations
 const DEAL_SOURCES = {
