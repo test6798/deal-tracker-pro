@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Deals Tracker | Best Software Discounts & Lifetime Deals</title>
+    <meta name="description"
+        content="Track the best software deals, lifetime offers, and discounts. Save money on productivity tools, design software, and business applications.">
+
+    <!-- SEO Meta Tags for Deal Discovery -->
+    <meta name="keywords"
+        content="software deals, lifetime deals, software discounts, AppSumo deals, productivity software, business tools">
+    <meta property="og:title" content="Software Deals Tracker - Best Software Discounts">
+    <meta property="og:description"
+        content="Find and track the best software deals and lifetime offers. Save thousands on business tools.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">💰 DealTracker Pro</h1>
+                <nav class="nav">
+                    <a href="#active-deals" class="nav-link">Active Deals</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Never Miss Another Software Deal</h2>
+                <p class="hero-subtitle">Track lifetime deals, flash sales, and exclusive discounts on the best
+                    productivity and business software</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="total-deals">12</span>
+                        <span class="stat-label">Active Deals</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$47K</span>
+                        <span class="stat-label">Avg. Saved</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">94%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-bar">
+        <div class="container">
+            <div class="filter-content">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Deals</button>
+                    <button class="filter-btn" data-filter="lifetime">Lifetime</button>
+                    <button class="filter-btn" data-filter="flash">Flash Sale</button>
+                    <button class="filter-btn" data-filter="discount">Discount</button>
+                </div>
+                <div class="sort-group">
+                    <select class="sort-select" id="sort-deals">
+                        <option value="newest">Newest First</option>
+                        <option value="ending-soon">Ending Soon</option>
+                        <option value="best-value">Best Value</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Deals Section -->
+    <section class="deals-section" id="active-deals">
+        <div class="container">
+            <h3 class="section-title">🔥 Hot Deals Right Now</h3>
+
+            <!-- Deal Cards Container - Will be populated by JavaScript -->
+            <div class="deals-grid" id="deals-container">
+                <!-- Deals will be dynamically inserted here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn" id="load-more">Load More Deals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <h3 class="section-title">Browse by Category</h3>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h4>Productivity</h4>
+                    <p>Task management, note-taking, and workflow tools</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎨</div>
+                    <h4>Design</h4>
+                    <p>Graphics, UI/UX, and creative software</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💼</div>
+                    <h4>Business</h4>
+                    <p>CRM, analytics, and business automation</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🛠️</div>
+                    <h4>Developer</h4>
+                    <p>Code editors, hosting, and dev tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Get Deal Alerts</h3>
+                <p>Be the first to know about new lifetime deals and flash sales</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 DealTracker Pro. All rights reserved.</p>
+                    <p>Affiliate links may earn us commission at no cost to you.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
