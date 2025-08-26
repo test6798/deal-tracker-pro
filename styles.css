@@ -1,3 +1,6 @@
+/* Updated styles.css - Phase 2: Automation Controls */
+/* Includes all original styles plus new automation features */
+
 /* CSS Reset and Base Styles */
 * {
     margin: 0;
@@ -54,6 +57,40 @@ body {
 
 .nav-link:hover {
     opacity: 0.8;
+}
+
+/* Error Banner Styles */
+.error-banner {
+    background: #fee2e2;
+    border-bottom: 2px solid #fecaca;
+    padding: 0.75rem 0;
+    display: none;
+}
+
+.error-banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-text {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.error-close {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.error-close:hover {
+    background: #fca5a5;
 }
 
 /* Hero Section */
@@ -119,6 +156,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .filter-group {
@@ -154,6 +192,67 @@ body {
     cursor: pointer;
 }
 
+/* Automation Bar Styles - NEW */
+.automation-bar {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.automation-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.status-indicator.active {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.status-indicator.inactive {
+    background: #ef4444;
+}
+
+.status-text {
+    font-weight: 600;
+    color: #333;
+}
+
+.last-update {
+    color: #666;
+}
+
+.refresh-btn {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* Deals Section */
 .deals-section {
     padding: 3rem 0;
@@ -173,7 +272,7 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Deal Card Styles */
+/* Deal Card Styles - ENHANCED */
 .deal-card {
     background: white;
     border-radius: 15px;
@@ -212,6 +311,20 @@ body {
 .badge-discount {
     background: #5f27cd;
     color: white;
+}
+
+/* Deal Source Badge - NEW */
+.deal-source-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.2rem 0.6rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border-radius: 12px;
+    z-index: 10;
 }
 
 .deal-image {
@@ -306,6 +419,24 @@ body {
     transform: scale(1.02);
     text-decoration: none;
     color: white;
+}
+
+/* No Deals Message - NEW */
+.no-deals-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.no-deals-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.no-deals-message p {
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
 /* Load More Button */
@@ -455,7 +586,49 @@ body {
     opacity: 0.8;
 }
 
-/* Responsive Design */
+/* Loading States - NEW */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #667eea;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Status Indicators - NEW */
+.status-success {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.status-error {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.status-warning {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+/* Enhanced Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
@@ -481,6 +654,12 @@ body {
     
     .filter-group {
         justify-content: center;
+    }
+    
+    .automation-status {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
     
     .newsletter-form {
@@ -526,5 +705,55 @@ body {
     
     .deal-content {
         padding: 1rem;
+    }
+    
+    .filter-bar {
+        position: relative;
+        top: auto;
+    }
+    
+    .automation-bar {
+        padding-top: 1rem;
+    }
+    
+    .deal-badge,
+    .deal-source-badge {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+}
+
+/* Dark Mode Support - NEW (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .deal-card {
+        background: #2a2a2a;
+        border: 1px solid #404040;
+    }
+    
+    .deal-title {
+        color: #ffffff;
+    }
+    
+    .filter-bar {
+        background: #2a2a2a;
+        border-bottom-color: #404040;
+    }
+    
+    .categories-section {
+        background: #2a2a2a;
+    }
+    
+    .category-card {
+        background: #1a1a1a;
+        border: 1px solid #404040;
     }
 }
