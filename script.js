@@ -659,6 +659,21 @@ function updateDisplays() {
     updateLastTrackTime('Data loaded');
 }
 
+function checkHighPriorityDeals() {
+    // Placeholder for high-priority deal checking
+    console.log('🔍 Checking high-priority deals...');
+}
+
+function showDealTrackingSuccess(results) {
+    console.log(`✅ Tracking successful: ${results.updated.length} updates`);
+    showNotification('Deal tracking updated successfully!', 'success');
+}
+
+function showDealTrackingError(error) {
+    console.error('❌ Deal tracking error:', error);
+    showNotification('Deal tracking encountered an issue', 'error');
+}
+
 // Export functions for console access and testing
 window.dealTracker = dealTracker;
 window.showPriceHistory = showPriceHistory;
