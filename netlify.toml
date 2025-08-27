@@ -1,0 +1,23 @@
+[build]
+  # Build settings
+  command = "echo 'Static site - no build required'"
+  publish = "."
+
+[functions]
+  # Function settings
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Install function dependencies automatically
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "18"
+
+# Redirect rules (optional - for clean URLs)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
