@@ -1,0 +1,24 @@
+{
+  "name": "deal-tracking-functions",
+  "version": "1.0.0",
+  "description": "Serverless functions for real-time software deal tracking",
+  "main": "track-software-deals.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [
+    "software",
+    "deals",
+    "price-tracking",
+    "scraping"
+  ],
+  "author": "Deal Tracker Pro",
+  "license": "MIT"
+}
